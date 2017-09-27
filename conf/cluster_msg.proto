@@ -1,0 +1,51 @@
+syntax = "proto2";
+package cluster.msg;
+
+enum  ClusterMsgType {
+  JOIN_CLUSTER = 0;
+  REJECT_JOIN_CLUSTER = 1;
+  LEFT_CLUSTER = 2;
+  CLUSTER_MEMBERS = 3;
+  SEND_MSG = 4;
+}
+
+
+message HostPort {
+  required string host = 1;
+  required int32 port = 2;
+}
+
+message JoinCluster {
+  required ClusterMsgType type = 1;//ClusterMsgType: JOIN_CLUSTER
+  required string cluster_name = 2;
+  required HostPort member = 3;
+}
+message ClusterMembers {
+  required ClusterMsgType type = 1;//ClusterMsgType: CLUSTER_MEMBERS
+  repeated HostPort members = 2;
+}
+
+message RejectJoin {
+  required ClusterMsgType type = 1;//ClusterMsgType: REJECT_JOIN_CLUSTER
+  optional string reason = 2;
+}
+
+enum DataType {
+  STRING = 0;
+  INT_32 = 1;
+  INT_64 = 2;
+  FLOAT = 3;
+  DOUBLE = 4;
+  BYTES = 5;
+  OBJECT = 6;
+
+}
+message DataMsg {
+  required ClusterMsgType type = 1;//ClusterMsgType: SEND_MSG
+  required string sender_host = 2;
+  required int32 sender_port = 3;
+  repeated string sender_paths = 4;
+  repeated string receiver_paths = 5;
+  required DataType data_type  = 6;
+  optional bytes data = 7;
+}
