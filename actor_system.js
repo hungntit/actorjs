@@ -15,7 +15,16 @@ var LRU = require('lru');
 // var ClusterMembers = cluster_msg_pb.ClusterMembers;
 // var ClusterMsgType = cluster_msg_pb.ClusterMsgType
 // var DataMsg = cluster_msg_pb.DataMsg;
-// var DataType = cluster_msg_pb.DataType;
+ // var DataType = cluster_msg_pb.DataType;
+ var DataType = {
+   "STRING" : 0,
+   "INT_32" : 1,
+   "INT_64" : 2,
+   "FLOAT" : 3,
+   "DOUBLE" : 4,
+   "BYTES" : 5,
+   "OBJECT" : 6
+ }
 var ActorSystem = function(){
   //on config
 
