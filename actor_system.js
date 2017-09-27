@@ -16,6 +16,13 @@ var LRU = require('lru');
 // var ClusterMsgType = cluster_msg_pb.ClusterMsgType
 // var DataMsg = cluster_msg_pb.DataMsg;
  // var DataType = cluster_msg_pb.DataType;
+ var ClusterMsgType = {
+   "JOIN_CLUSTER" : 0,
+   "REJECT_JOIN_CLUSTER" : 1,
+   "LEFT_CLUSTER" : 2,
+   "CLUSTER_MEMBERS" : 3,
+   "SEND_MSG" : 4
+ }
  var DataType = {
    "STRING" : 0,
    "INT_32" : 1,
