@@ -1,6 +1,6 @@
 const net = require('net');
 var ClusterMessageUtils = require('./cluster_msg_utils');
-var cluster_msg_pb = require('./cluster_msg_pb');
+// var cluster_msg_pb = require('./cluster_msg_pb');
 var HostPortUtils = require('./hostport_utils');
 var Actor = require('./actor');
 var ActorRef = require('./actor_ref');
@@ -9,13 +9,13 @@ var SocketPackageHandler = require('./socket_handler')
 var config = require('./conf/config')
 var LRU = require('lru');
 
-var JoinCluster = cluster_msg_pb.JoinCluster;
-var HostPort = cluster_msg_pb.HostPort;
-var RejectJoin = cluster_msg_pb.RejectJoin;
-var ClusterMembers = cluster_msg_pb.ClusterMembers;
-var ClusterMsgType = cluster_msg_pb.ClusterMsgType
-var DataMsg = cluster_msg_pb.DataMsg;
-var DataType = cluster_msg_pb.DataType;
+// var JoinCluster = cluster_msg_pb.JoinCluster;
+// var HostPort = cluster_msg_pb.HostPort;
+// var RejectJoin = cluster_msg_pb.RejectJoin;
+// var ClusterMembers = cluster_msg_pb.ClusterMembers;
+// var ClusterMsgType = cluster_msg_pb.ClusterMsgType
+// var DataMsg = cluster_msg_pb.DataMsg;
+// var DataType = cluster_msg_pb.DataType;
 var ActorSystem = function(){
   //on config
 
