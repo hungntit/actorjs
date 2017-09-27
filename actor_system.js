@@ -6,6 +6,7 @@ var Actor = require('./actor');
 var ActorRef = require('./actor_ref');
 var BytesUtils = require('./bytes_utils')
 var SocketPackageHandler = require('./socket_handler')
+var config = require('./conf/config')
 var LRU = require('lru');
 
 var JoinCluster = cluster_msg_pb.JoinCluster;
@@ -22,16 +23,7 @@ var ActorSystem = function(){
   var onMessage = function(){
 
   }
-  var seed_nodes = [
-    {
-      'host': '127.0.0.1',
-      'port': 7000,
-    },{
-      'host': '127.0.0.1',
-      'port': 7001,
-    },
-
-  ];
+  var seed_nodes = config.seed_nodes
 
 
   var clusterName = "actorjs.io"//on config
